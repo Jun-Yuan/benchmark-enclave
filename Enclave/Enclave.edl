@@ -1,0 +1,10 @@
+enclave {
+    trusted {
+        //ECALLS
+        public void enclaveOutNodeFunction([out, size=len] char *buf, size_t len);
+        public void enclaveInOutMergeFunction([in, size=len1] char *buf1, size_t len1, [in, size=len2] char * buf2, size_t len2, [out, size=len3]char * buf3, size_t len3);
+   };
+    untrusted {
+        void ocall_print_string([in, string] const char *str);
+    };
+};
